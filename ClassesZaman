@@ -1,0 +1,51 @@
+class analysedText(object):
+    
+    def __init__ (self, text):
+    
+        self.text = text
+        
+        global fmtText 
+        
+        
+        fmtText=text.replace('!',"" ).replace('.',"").replace('?',"").replace(',',"").lower().split(" ")
+        
+        print(fmtText)
+        
+        print("\n")
+    
+    def freqAll(self):     
+        
+#         myset = set(fmtText);
+        
+        dictio = {}
+        
+        for i in set(fmtText):
+            
+            b = fmtText.count(i)
+            
+            dictio[i] = fmtText.count(i)
+           
+            
+        print(dictio)
+    
+        return dictio
+            
+            
+            
+        
+    
+    def freqOf(self,word):
+        
+        dictio = self.freqAll()
+        
+        print(word, dictio)
+        
+        
+        
+        
+        
+newc = analysedText("My? name name is Tahsin!")
+
+newc.freqAll()
+
+newc.freqOf("name")
