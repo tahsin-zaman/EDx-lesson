@@ -1,0 +1,36 @@
+class analysedText(object):
+
+    def __init__(self, text):
+        self.text = text
+
+        global fmtText
+
+        fmtText = text.replace('.','').replace(',','').replace('!','').replace('?','').lower().split(' ')
+
+        print(fmtText)  ##take this away
+        print('\n')
+
+
+    def freqAll(self):
+
+        newDict = {}
+
+        for goThroughWords in set(fmtText):
+
+            b = fmtText.count(goThroughWords)
+            newDict = {goThroughWords: b}
+            # print(newDict)
+        return newDict
+
+
+    def freqOf(self, word):
+
+        newDict = self.freqAll()
+        print(word, newDict[word])
+        pass
+
+
+
+newText = analysedText('Hello, my name is Afridee Haque. My brother name is Nashwan Haque. Papa is Fazlul Haque')
+newText.freqAll()
+newText.freqOf('is')
